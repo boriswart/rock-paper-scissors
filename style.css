@@ -1,0 +1,36 @@
+:root{
+    --RPS-background:   #463f047e;
+    --RPS-text:          #020c08f1;
+    --RPS-highlight:     #273b74e0;
+    --RPS-text-light:     #e3eef8;
+}
+
+body{
+    background-color: var(--wk1-background);
+    color:             var(--wk1-text);
+}
+
+.head{
+    background-color: var(--wk1-highlight);
+    font-size:medium;
+}
+
+.mid-section{
+    background-color: var(--wk1-highlight);
+    color:     var(--wk1-text-light);
+}
+.card-text{
+    color: var(--wk1-highlight);
+}
+
+.center{
+  justify-content: center;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.space-between{
+    justify-content: space-between;
+}
