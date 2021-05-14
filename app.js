@@ -83,10 +83,10 @@ function play(hand) {
             }
 
     }
-    scoreElem.innerText = `Wins: ${numberOfWins}     Losses: ${numberOfLosses}    Ties: ${numberOfTies}`
     console.log("but ... Computer Hand beats:   drumm roll ...", computerHandBeats)
     // wait for 1 second then play default gif "Play-again"
     setTimeout(playVid, 4000)
+    scoreElem.innerText = `Wins: ${numberOfWins}     Losses: ${numberOfLosses}    Ties: ${numberOfTies}`
 }
 
 function playVid(gif) {
