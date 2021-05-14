@@ -1,5 +1,8 @@
 let didYouWin = true
 let didYouTie = true
+let numberOfWins = 0
+let numberOfLosses = 0
+let numberOfTies = 0
 let imageSpaceElem = document.getElementById("img-space")
 let winLoseSpaceElem = document.getElementById("win-lose-space")
 let possibleMoves = [{
@@ -19,6 +22,7 @@ let possibleMoves = [{
     img: "https://thumbs.gfycat.com/WhichDisastrousAmurratsnake-max-1mb.gif"
 }
 ]
+let scoreElem = document.getElementById("score")
 
 function play(hand) {
     let handToPlay = findRPS(hand)
@@ -32,13 +36,16 @@ function play(hand) {
                 playVid("img/rock-paper.gif")
                 didYouWin = false
                 didYouTie = false
+                numberOfLosses++
             } else if (computerHandBeats == "paper") {
                 playVid("img/rock-sciss.gif")
                 didYouWin = true
                 didYouTie = false
+                numberOfWins++
             } else {
                 playVid("img/tie.gif");
                 didYouTie = true
+                numberOfTies++
             }
             break;
         case "paper":
@@ -46,13 +53,16 @@ function play(hand) {
                 playVid("img/paper-sciss.gif")
                 didYouWin = false
                 didYouTie = false
+                numberOfLosses++
             } else if (computerHandBeats == "scissors") {
                 playVid("img/paper-rock.gif")
                 didYouWin = true
                 didYouTie = false
+                numberOfWins++
             } else {
                 playVid("img/tie.gif");
                 didYouTie = true
+                numberOfTies++
             }
             break;
         case "scissors":
@@ -60,17 +70,20 @@ function play(hand) {
                 playVid("img/sciss-rock.gif")
                 didYouWin = false
                 didYouTie = false
+                numberOfLosses++
             } else if (computerHandBeats == "rock") {
                 playVid("img/sciss-paper.gif")
                 didYouWin = true
                 didYouTie = false
+                numberOfWins++
             } else {
                 playVid("img/tie.gif");
                 didYouTie = true
+                numberOfTies++
             }
 
     }
-
+    scoreElem.innerText = `Wins: ${numberOfWins}     Losses: ${numberOfLosses}    Ties: ${numberOfTies}`
     console.log("but ... Computer Hand beats:   drumm roll ...", computerHandBeats)
     // wait for 1 second then play default gif "Play-again"
     setTimeout(playVid, 4000)
